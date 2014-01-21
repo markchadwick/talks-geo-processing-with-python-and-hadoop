@@ -6,7 +6,7 @@ from shapely import wkt
 
 
 def _records():
-  for line in open('./playgrounds'):
+  for line in sys.stdin:
     area, rec = line.split('\t')
     rec =  json.loads(rec)
     rec['playground'] = wkt.loads(rec['playground'])

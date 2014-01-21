@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Britekite data sets
 
-SAMPLE_SIZE = 10000
+SAMPLE_SIZE = 100000
 
 data/britekite.all.tsv:
 	curl http://snap.stanford.edu/data/loc-brightkite_totalCheckins.txt.gz | gzip -d > data/britekite.all.tsv
