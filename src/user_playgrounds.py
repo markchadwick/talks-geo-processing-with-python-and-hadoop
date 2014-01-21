@@ -15,18 +15,8 @@ class UserPlaygrounds(MRJob):
       return
 
     uid, ts, lat, lng, loc = parts
-    try:
-      lat, lng = float(lat), float(lng)
-      yield uid, (lng, lat)
-    except:
-      import sys
-      sys.stderr.write('- ' * 30)
-      sys.stderr.write('\n')
-      sys.stderr.write('line: %r, parts %r' % (line, parts))
-      sys.stderr.write('\n')
-      sys.stderr.write('- ' * 30)
-      sys.stderr.write('\n')
-      raise
+    lat, lng = float(lat), float(lng)
+    yield uid, (lng, lat)
 
   def reducer(self, uid, locs):
     polys      = self._locs_to_polys(locs)
