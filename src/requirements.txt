@@ -1,3 +1,2 @@
 mrjob
 Shapely
-Fiona
